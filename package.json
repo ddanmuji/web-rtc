@@ -1,0 +1,55 @@
+{
+	"name": "webrtc_practice",
+	"version": "0.0.0",
+	"description": "meet-up server repository",
+	"repository": "https://github.com/ddanmuji/webrtc_practice",
+	"author": "ddanmuji <cgyeo5533@gmail.com>",
+	"private": true,
+	"lint-staged": {
+		"**/*.{ts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"scripts": {
+		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+		"start": "node ./dist/index.js",
+		"build": "tsc",
+		"commit": "pnpm git-cz",
+		"prepare": "husky install",
+		"prepare:permission": "chmod +x .husky/*"
+	},
+	"dependencies": {
+		"@socket.io/admin-ui": "^0.5.1",
+		"express": "^4.18.2",
+		"helmet": "^7.0.0",
+		"morgan": "^1.10.0",
+		"pug": "^3.0.2",
+		"socket.io": "^4.6.2",
+		"ws": "^8.13.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.6.5",
+		"@commitlint/config-conventional": "^17.6.5",
+		"@types/express": "^4.17.17",
+		"@types/morgan": "^1.9.4",
+		"@typescript-eslint/eslint-plugin": "^5.59.11",
+		"@typescript-eslint/parser": "^5.59.11",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.43.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
+		"nodemon": "^2.0.22",
+		"prettier": "^2.8.8",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.1.3"
+	}
+}
